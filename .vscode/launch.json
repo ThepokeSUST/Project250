@@ -1,0 +1,79 @@
+// {
+//     "type": "java",
+//     "name": "AppLauncher",
+//     "request": "launch",
+//     "mainClass": "AppLauncher",
+//     "projectName": "FirstJavaFX_cbd4f0e5",
+//     "vmArgs": "--module-path \"C:/java/javafx-sdk-25/lib\" --add-modules javafx.controls,javafx.fxml -Djava.library.path=lib --enable-native-access=ALL-UNNAMED",
+//     "classPaths": [
+//         "bin",
+//         "lib/opencv-4120.jar"
+//     ],
+//     "configurations": [
+//         {
+//             "type": "java",
+//             "name": "MoodScannerApp",
+//             "request": "launch",
+//             "mainClass": "MoodScannerApp",
+//             "projectName": "FirstJavaFX_3fcf0ef3"
+//         },
+//         {
+//             "type": "java",
+//             "name": "App",
+//             "request": "launch",
+//             "mainClass": "AppLauncher",
+//             "projectName": "FirstJavaFX_3fcf0ef3"
+//         },
+//         {
+//             "type": "java",
+//             "name": "AppLauncher",
+//             "request": "launch",
+//             "mainClass": "App",
+//             "projectName": "FirstJavaFX_cbd4f0e5",
+//             "vmArgs": "--module-path \"C:/java/javafx-sdk-25/lib\" --add-modules javafx.controls,javafx.fxml -Djava.library.path=lib --enable-native-access=ALL-UNNAMED"
+//         }
+//     ]
+// }
+
+
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "AppLauncherGUI",
+            "request": "launch",
+            "mainClass": "AppLauncherGUI",
+            "projectName": "FirstJavaFX_3fcf0ef3"
+        },
+        {
+            "type": "java",
+            "name": "App (Mood Scanner)",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "FirstJavaFX_cbd4f0e5",
+            "vmArgs": "--module-path \"C:/java/javafx-sdk-25/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.swing -Djava.library.path=lib",
+            "classPaths": [
+                "bin",
+                "lib/opencv-4120.jar"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "AppLauncher (Project 3fcf0ef3)",
+            "request": "launch",
+            "mainClass": "AppLauncher",
+            "projectName": "FirstJavaFX_3fcf0ef3",
+            "vmArgs": "--module-path \"C:/java/javafx-sdk-25/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.swing -Djava.library.path=lib"
+        },
+        {
+            "type": "java",
+            "name": "AppLauncher (Project cbd4f0e5)",
+            "request": "launch",
+            "mainClass": "AppLauncher",
+            "projectName": "FirstJavaFX_cbd4f0e5",
+            "vmArgs": "--module-path \"C:/java/javafx-sdk-25/lib\" --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.swing -Djava.library.path=lib"
+        }
+    ]
+}
