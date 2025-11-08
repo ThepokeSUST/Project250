@@ -60,9 +60,31 @@ public class AppLauncher extends Application {
     private ListView<MoodEntry> historyListView;
     // ------------------------------------
 
+
+
+
+
+
+
+
+
+
+    //main method starting point of the project
     public static void main(String[] args) {
         launch(args);
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public void start(Stage stage) {
@@ -92,6 +114,19 @@ public class AppLauncher extends Application {
         primaryStage.show();
     }
     
+
+
+
+
+
+
+
+
+
+
+
+
+
     private void stopLiveFeedAndReleaseCamera() {
         showingLiveFeed = false;
         if (cameraThread != null && cameraThread.isAlive()) {
@@ -107,6 +142,13 @@ public class AppLauncher extends Application {
             camera = null; 
         }
     }
+
+
+
+
+
+
+
 
     // -----------------------------------------------------------------
     // ## 1. Login Scene
@@ -133,7 +175,7 @@ public class AppLauncher extends Application {
         Button signupBtn = new Button("✍️ Create Account");
         signupBtn.setStyle("-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-font-size: 14px; -fx-background-radius: 5;"); 
         
-        Label messageLabel = new Label("Welcome! (Default: admin/password)");
+        Label messageLabel = new Label("Mood is the feeling created by the writer for the reader. It is what happens within a reader because of the tone the writer used in the poem.");
         messageLabel.setStyle("-fx-text-fill: #00BCD4;");
 
         // Layout
@@ -201,13 +243,26 @@ public class AppLauncher extends Application {
         });
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     // -----------------------------------------------------------------
     // ## 2. Sign Up Scene
     // -----------------------------------------------------------------
     private void showSignupScene() {
         stopLiveFeedAndReleaseCamera();
         
-        Label title = new Label("Create New Account ✍️");
+        Label title = new Label("Create New Account sir ✍️");
         title.setStyle("-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #FFC107;");
         
         Label userLabel = new Label("New Username:");
@@ -224,7 +279,7 @@ public class AppLauncher extends Application {
         Button backBtn = new Button("⬅️ Back to Login");
         backBtn.setStyle("-fx-background-color: #384A5C; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-font-size: 14px; -fx-background-radius: 5;"); 
         
-        Label messageLabel = new Label("");
+        Label messageLabel = new Label("Thanks for registration");
         messageLabel.setStyle("-fx-text-fill: white;");
 
         // Layout
@@ -289,6 +344,16 @@ public class AppLauncher extends Application {
 
         backBtn.setOnAction(e -> showLoginScene());
     }
+
+
+
+
+
+
+
+
+
+
 
     // -----------------------------------------------------------------
     // ## 3. Main Application Scene (The Scanner)
@@ -438,7 +503,7 @@ public class AppLauncher extends Application {
 
         // Background loading (Assuming 'bg.jpg' is in resources folder, or remove if not used)
         try {
-            Image bgImage = new Image(getClass().getResource("/bg.jpg").toExternalForm());
+            Image bgImage = new Image(getClass().getResource("/backgroumd-png.png").toExternalForm());
             BackgroundImage backgroundImage = new BackgroundImage(
                             bgImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
                             BackgroundPosition.CENTER, new BackgroundSize(
@@ -459,6 +524,24 @@ public class AppLauncher extends Application {
         startLiveFeed();
     }
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // -----------------------------------------------------------------
     // ## 4. Camera & Action Methods
     // -----------------------------------------------------------------
@@ -489,6 +572,22 @@ public class AppLauncher extends Application {
         cameraThread.start();
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     private void createPhotoDirectory(String directoryName) {
         try {
             Path dirPath = Paths.get(directoryName);
@@ -500,6 +599,15 @@ public class AppLauncher extends Application {
             System.err.println("Failed to create directory " + directoryName + ": " + e.getMessage());
         }
     }
+
+
+
+
+
+
+
+
+
 
 
     private void takePicture(Button takePicBtn, Button retakeBtn, Button analyzeBtn) {
@@ -526,6 +634,15 @@ public class AppLauncher extends Application {
         analyzeBtn.setDisable(false);
     }
 
+
+
+
+
+
+
+
+
+
     private void retakePicture(Button takePicBtn, Button retakeBtn, Button analyzeBtn) {
         moodLabel.setText("📷 Ready to capture");
         if (camera == null || !camera.isOpened()) {
@@ -541,6 +658,20 @@ public class AppLauncher extends Application {
         retakeBtn.setDisable(true);
         analyzeBtn.setDisable(true);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private void analyzeMoodFromCapture() {
         if (lastCapturedFrame == null) {
@@ -589,4 +720,8 @@ public class AppLauncher extends Application {
         moodLabel.setText("⏳ Analyzing mood...");
         new Thread(analysisTask).start();
     }
+
+
+
+    
 }

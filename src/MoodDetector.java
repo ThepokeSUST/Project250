@@ -129,12 +129,22 @@ public class MoodDetector {
         int numSmiles = smileDetections.toArray().length;
         int numEyes = eyeDetections.toArray().length;
         
-        if (numSmiles > 0)
+        //test
+        System.out.println(numSmiles);
+        System.out.println(numEyes);
+        System.out.println();
+        //test
+
+
+
+        if (numSmiles >= 1 && numEyes==0)
             mood = "Happy"; 
-        else if (numEyes >= 1) // Changed from 2 to 1 for more robustness
-            mood = "Neutral"; 
-        else
+        else if (numSmiles==0 && numEyes >= 2) // Changed from 2 to 1 for more robustness
+            mood = "Angry"; 
+        else if(numSmiles==1 &&numEyes==1)
             mood = "Pensive"; 
+        else 
+            mood="Neutral"    ;
 
         smileRegion.release();
         eyeRegion.release();
@@ -152,3 +162,5 @@ public class MoodDetector {
         }
     }
 }
+
+
