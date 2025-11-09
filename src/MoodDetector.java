@@ -137,12 +137,12 @@ public class MoodDetector {
 
 
 
-        if (numSmiles >= 1 && numEyes==0)
+        if(numSmiles>=1 &&numEyes==0)
+            mood = "Pensive";
+        else if (numEyes >= 2 && numSmiles==0) // Changed from 2 to 1 for more robustness
+            mood = "Angry";  
+        else if (numSmiles >= 1)
             mood = "Happy"; 
-        else if (numSmiles==0 && numEyes >= 2) // Changed from 2 to 1 for more robustness
-            mood = "Angry"; 
-        else if(numSmiles==1 &&numEyes==1)
-            mood = "Pensive"; 
         else 
             mood="Neutral"    ;
 
@@ -155,10 +155,10 @@ public class MoodDetector {
 
     private static Scalar getMoodColor(String mood) {
         switch (mood) {
-            case "Happy": return new Scalar(0, 255, 255); // Yellow
-            case "Neutral": return new Scalar(0, 255, 0); // Green
-            case "Pensive": return new Scalar(255, 0, 0); // Blue (BGR format)
-            default: return new Scalar(255, 255, 255); // White
+            case "Neutral": return new Scalar(255, 255, 255); // white
+            case "Happy": return new Scalar(0, 255, 0); // Green
+            case "Pensive": return new Scalar(100, 125, 0); // black (BGR format)
+            default: return new Scalar(0, 0, 255); // red
         }
     }
 }

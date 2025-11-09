@@ -1,4 +1,8 @@
 
+
+
+
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -499,11 +503,11 @@ public class AppLauncher extends Application {
         root.setCenter(centerBox);
         root.setRight(historyBox); // Place the history to the right
 
-        root.setStyle("-fx-background-color: #1E2A38;"); 
+        root.setStyle("-fx-background-color: #1e1e1e;"); 
 
         // Background loading (Assuming 'bg.jpg' is in resources folder, or remove if not used)
         try {
-            Image bgImage = new Image(getClass().getResource("/backgroumd-png.png").toExternalForm());
+            Image bgImage = new Image(getClass().getResource("background.png").toExternalForm());
             BackgroundImage backgroundImage = new BackgroundImage(
                             bgImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
                             BackgroundPosition.CENTER, new BackgroundSize(
@@ -515,7 +519,7 @@ public class AppLauncher extends Application {
         }
         
         Scene scene = new Scene(root, 1300, 650); 
-        primaryStage.setTitle("Mood Scanner v2.0 | Harmonious Tech - Logged in as: " + currentUsername);
+        primaryStage.setTitle("Mood Scanning Music Suggester: " + currentUsername);
         primaryStage.setScene(scene); 
         primaryStage.sizeToScene(); 
         primaryStage.centerOnScreen();
@@ -725,3 +729,17 @@ public class AppLauncher extends Application {
 
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
